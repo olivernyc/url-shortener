@@ -90,12 +90,22 @@ function renderErrors(errors: CreateLinkErrors) {
 	const urlErrors =
 		errors.url &&
 		errors.url.map((error) => (
-			<div className="mv2 f6">⚠️ Error: URL {error}</div>
+			<div className="mv2 f6">
+				<span role="img" aria-label="warning">
+					⚠️
+				</span>{" "}
+				Error: URL {error}
+			</div>
 		));
 	const slugErrors =
 		errors.slug &&
 		errors.slug.map((error) => (
-			<div className="mv2 f6">⚠️ Error: Slug {error}</div>
+			<div className="mv2 f6">
+				<span role="img" aria-label="warning">
+					⚠️
+				</span>{" "}
+				Error: Slug {error}
+			</div>
 		));
 	return (
 		<div className="bg-washed-yellow pa2 mb3">
