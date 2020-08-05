@@ -19,14 +19,18 @@ export function LinkListItem(props: Props) {
 						{props.link.short_url}
 					</a>
 				</h3>
-				<span className="silver f6">{props.link.url}</span>
+				<div className="silver f6">
+					<span>{props.link.url}</span>
+				</div>
 			</div>
-			<button
-				className="bn br2 bg-transparent gray pointer pa0 f6"
-				onClick={onDelete}
-			>
-				Delete
-			</button>
+			<div>
+				<button
+					className="bn br2 bg-transparent gray pointer pa0 f6"
+					onClick={onDelete}
+				>
+					Delete
+				</button>
+			</div>
 		</div>
 	);
 }

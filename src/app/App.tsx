@@ -1,7 +1,7 @@
 import React from "react";
-import { LinksList } from "./features/links/LinksList";
 import "tachyons";
 import "./App.css";
+import { LinksList } from "../features/links/LinksList";
 
 function App() {
   return (

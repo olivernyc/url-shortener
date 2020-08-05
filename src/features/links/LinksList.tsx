@@ -26,18 +26,22 @@ export function LinksList() {
 	};
 
 	const onDeleteClicked = async (slug: string) => {
-		await deleteLink(slug);
-		setLinks(links.filter((link) => link.slug !== slug));
+		try {
+			await deleteLink(slug);
+			setLinks(links.filter((link) => link.slug !== slug));
+		} catch (error) {
+			alert(`Error: ${error.message}`);
+		}
 	};
 
 	const onNewLink = async (url: string, slug?: string) => {
 		try {
 			setErrors({});
-			const { link, errors } = await createLink(url, slug);
+			const { errors } = await createLink(url, slug);
 			if (errors) {
 				setErrors(errors);
 			} else {
-				setLinks([link, ...links]);
+				await fetchLinks();
 				setShowModal(false);
 			}
 		} catch (error) {}

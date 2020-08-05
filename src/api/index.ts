@@ -94,7 +94,7 @@ export async function deleteLink(slug: string): Promise<boolean> {
 				"GB-Access-Token": `${process.env.REACT_APP_API_KEY}`,
 			},
 		});
-		if (response.status !== 204) return false;
+		if (response.status !== 204) throw new Error(response.statusText);
 		return true;
 	} catch (error) {
 		throw error;

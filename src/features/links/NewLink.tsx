@@ -56,8 +56,6 @@ export function NewLink(props: Props) {
 							className="pa2 input-reset ba b--moon-gray br2 w-100"
 							type="text"
 							name="slug"
-							pattern="[A-Za-z0-9]*"
-							title="Alphanumeric with no spaces"
 							id="slug"
 							autoComplete="false"
 							spellCheck="false"
