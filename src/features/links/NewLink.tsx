@@ -88,7 +88,7 @@ function renderErrors(errors: CreateLinkErrors) {
 	const urlErrors =
 		errors.url &&
 		errors.url.map((error) => (
-			<div className="mv2 f6">
+			<div key={"url" + error} className="mv2 f6">
 				<span role="img" aria-label="warning">
 					⚠️
 				</span>{" "}
@@ -98,7 +98,7 @@ function renderErrors(errors: CreateLinkErrors) {
 	const slugErrors =
 		errors.slug &&
 		errors.slug.map((error) => (
-			<div className="mv2 f6">
+			<div key={"slug" + error} className="mv2 f6">
 				<span role="img" aria-label="warning">
 					⚠️
 				</span>{" "}
@@ -106,7 +106,7 @@ function renderErrors(errors: CreateLinkErrors) {
 			</div>
 		));
 	return (
-		<div className="bg-washed-yellow pa2 mb3">
+		<div className="bg-washed-yellow pa2 mb3" role="alert">
 			{urlErrors}
 			{slugErrors}
 		</div>

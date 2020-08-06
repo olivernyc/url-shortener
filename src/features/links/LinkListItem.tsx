@@ -12,7 +12,7 @@ export function LinkListItem(props: Props) {
 	};
 
 	return (
-		<div className="bb b--light-gray pv3 flex justify-between items-center">
+		<li className="bb b--light-gray pv3 flex justify-between items-center">
 			<div>
 				<h3 className="mt0 mb1 fw6">
 					<a href={props.link.url} target="_" className="link blue">
@@ -31,6 +31,6 @@ export function LinkListItem(props: Props) {
 					Delete
 				</button>
 			</div>
-		</div>
+		</li>
 	);
 }

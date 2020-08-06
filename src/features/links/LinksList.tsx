@@ -60,13 +60,15 @@ export function LinksList() {
 					</button>
 				</div>
 			</div>
-			{links.map((link) => (
-				<LinkListItem
-					key={link.short_url}
-					link={link}
-					onDelete={onDeleteClicked}
-				/>
-			))}
+			<ul className="pa0 ma0">
+				{links.map((link) => (
+					<LinkListItem
+						key={link.short_url}
+						link={link}
+						onDelete={onDeleteClicked}
+					/>
+				))}
+			</ul>
 			{showModal && (
 				<NewLink
 					onSubmit={onNewLink}

@@ -24,7 +24,7 @@ export async function getLinks(): Promise<Link[]> {
 		});
 		if (response.status !== 200) throw new Error(response.statusText);
 		const links = await response.json();
-		return links.reverse(); // Most recent first
+		return links; // Most recent first
 	} catch (error) {
 		throw error;
 	}
